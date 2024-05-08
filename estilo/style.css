@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    /* 
+    "/" - a barra serve para você navegar pelas pastas
+    "." - um ponto só, serve para você indicar a pasta atual
+    ".." - significa a pasta anterior AQUI FOI PRECISO USAR OS DOIS PONTOS PARA INDICAR QUE TERIAMOS QUE VOLTAR UMA PASTA E IR PARA O ARQ. DA FONTE QUE PRECISAVAMOS POIS ESTAMOS NA PASTA "ESTILO" DO CSS.
+    */
+    
+    font-weight: normal;
+}
+
+
+:root {
+    --cor0:#ecbae6;
+    --cor1:#e71ee7;
+    --cor2:#fc00fc;
+    --cor3:#eb1ac8;
+    --cor4:#ff0040;
+    --cor5:#8d215c;
+    /*
+    você pode também nomear as cores, "exp: cor de fundo" para facilitar onde cada uma vai ficar. Essa variável vai servir para setar mais rápido a cor nas váriaveis seguintes selecionado "ctrl+espaço ou escrevendo "var+cor", aparecerá as 5 cores aqui adicionadas.Desta forma precisando mudar algo no site, vc poderá apenas mudar na var. root, que todas as opções seguintes que possuírem aquela propriedade será automaticamente modificada
+    */
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:"Bebas Neue", 'cursive';
+    --fonte-android: 'Android', 'cursive';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+main p { /* esse main para P não possui ">" pq quando colocamos desta forma, significa que esse seletor vai servir para qualquer nível dentro e não para algo em específico*/
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+main strong {
+    color: var(--cor3);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-family: bold;
+    color: var(--cor3);
+    background-color: #ecbae6;
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor3);
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao)   
+}
+
+a.externo::after {
+    content: '\00A0\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.418);
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow:black
+}
+
+nav > a {
+    color: rgb(184, 5, 255);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.25s; /* para a reação de animação do menu demorar mais um pouco*/
+}
+
+nav > a:hover {
+    background-color: var(--cor2);
+    /*
+    Esse pseudoclasse fez com que o menu se tornasse interativo, respondendo ao passar com o mouse em cima.
+    */
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;  
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor1);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor0), transparent);
+    text-indent: 8px;
+    
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+div.video {
+    background-color: #ecbae6;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.267);
+}
+
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin:  -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;    
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* não é compatível com todos os navegadores*/
+    list-style-position: inside;
+    columns: 2;
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: #ecbae6;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor0);
+}
